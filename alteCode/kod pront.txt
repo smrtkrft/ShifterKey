@@ -1,0 +1,23 @@
+en bastan basliyoruz, tüm kodu sil!
+
+sistem bilesenleri :
+esp12s, pn532, oled 128x64 ekran, 3 buton.
+pn532 ve olde i2c ile baglanacak, sda gpio4 ,scl gpio5 olacak. sag buton g13 sol buton gpio14 ok butonu gpio12 olacak. 
+oled acilis animasyonu size:2 ve dikey/yatay ortalanmis ShifterKey yazisi wave etkisi ile kisa dalgalanip yerinde duracak. hemen altinda size:1 ile matrix efekti kullanilarak SmartKraft yazacak buda yatayda ortalanmis olacak. 
+animasyondan sonra menü acilacak.
+menü:
+Read , Copy, New uid, Saved, Setting olacak
+Read modunda rfid okunacak , alt menü olarak okunan rfid kaydetme secenegi olacak, kaydetme secilirse saved icerisinde 1-10 arasi nereye kaydedilecegi secilecek. 
+Tüm baslik alt basliklarda en son secenek ana menüye dön olacak. 
+copy, icerik olarak ilk önce bir rfid kart okutulacak ve kullaniciya kart uidsi gösterilip tekli yada coklu kopyalama secenegi sorulacak. tekli kopyalama secilirse 2. okutulan karta uidyi kopyalayip ara islemlerde ekranda aciklamalari yazdirip islem bitince ana menüye dönecek. coklu kopyalama secilirse , ilk okutulan kopyalanacak karti birden basla karta kopyalamak secildigi icin her islem icin aciklama yazisi ile birlikte her kopyalamadan sonra yeni karti istenecek , taki kullanici ok tusuna basip ana menüye dönene kadar.
+New uid basligi altinda 2 secenek olacak
+4 byte ve 7 byte 
+4 byte secimi 8 karakterlik uid yazdirmak , 7 byte ise 14 karakterlik uid yazdirmak icin kullanilacak, uid sag sol butonlar kullanilarak 0-9 ve a-f arasi secimler ile ilerleyecek. uid olusturulduktan sonra okutulan magic karta yazma islemi yapilacak.
+saved basligi icerigi: 1-10 arasi kardedilmis uidlerden biri secildiginde acilacak alt menü : emüle et, kopyala, sil, ana menüye dön. anlasildigi üzere emüle et demek o uidyi rfid kartiymis gibi taklit et demek , sistem kendisini o uid deki gibi kart olarak gösterecek. kopyala secilirse single multi secenekleri sorulacak, sil demek silmek demek.
+setting icerigi iki ana alt baslik olacak , ilki dil secenekleri : EN ingilizce sistemin ana yapisi baslangicta ingilizce baslayacak, DE almanca, TR türkce. bunlardan biri secildiginde sistem bütün yapiyi o dile göre ayarlayacak , bütün basliklar , bütün aciklamalar ,bütün icerik o dilde olacak. cihaz yeniden baslatilinca son secili dil ne ise o dilde devam edecek. (tr icin ek ayar, şçöğü gibi karakterler olmayacak ingiliz alfabesine uygun olacak). settingdeki ikinci alt baslik info olacak , onda da sabit text gösterilecek:
+SmartKraft (size:2)
+ShifterKey v1.1 (size:1)
+Juli - 2025 (size:1)
+info - www.smartkraft.ch (size yani büyüklük :1)
+
+anlasilmayan ucu acik kalan bir yer var mi ?
